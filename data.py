@@ -38,3 +38,12 @@ def total_sales(df):
 def total_orders(df):
     """Number of distinct orders (unique order IDs, not rows)."""
     return int(df["order_id"].nunique())
+
+
+def sales_by_month(df):
+    """Total sales per calendar month, in date order.
+
+    "MS" groups by month start, so each month is labeled with its first day.
+    """
+    monthly = df.resample("MS", on="date")["total_amount"].sum()
+    return monthly.reset_index().rename(columns={"date": "month", "total_amount": "sales"})

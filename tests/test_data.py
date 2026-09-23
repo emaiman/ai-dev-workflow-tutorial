@@ -4,7 +4,7 @@ from pathlib import Path
 import pandas as pd
 import pytest
 
-from data import load_sales_data, total_orders, total_sales
+from data import load_sales_data, sales_by_month, total_orders, total_sales
 
 CSV_PATH = Path(__file__).parent.parent / "data" / "sales-data.csv"
 
@@ -44,3 +44,15 @@ def test_total_orders_counts_each_order_once():
     # An order spread over two rows still counts as one order.
     df = pd.DataFrame({"order_id": ["ORD-1", "ORD-1", "ORD-2"]})
     assert total_orders(df) == 2
+
+
+def test_sales_by_month_has_one_row_per_month_in_order(sales):
+    monthly = sales_by_month(sales)
+    assert list(monthly.columns) == ["month", "sales"]
+    assert len(monthly) == 12
+    assert monthly["month"].is_monotonic_increasing
+    assert monthly["month"].iloc[0] == pd.Timestamp("2024-01-01")
+
+
+def test_sales_by_month_adds_up_to_total_sales(sales):
+    assert sales_by_month(sales)["sales"].sum() == pytest.approx(116500.21)
