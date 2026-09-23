@@ -59,11 +59,11 @@ Commit:
 
 ## In Progress
 
+## Done
+
 ### TASK-1: Environment setup and project initialization
 Set up the Python environment, dependencies, and a minimal Streamlit app skeleton.
-- [ ] `requirements.txt` lists `streamlit`, `pandas`, and `plotly`
-- [ ] `app.py` exists and launches with `streamlit run app.py` showing the dashboard title
+- [x] `requirements.txt` lists `streamlit`, `pandas`, and `plotly`
+- [x] `app.py` exists and launches with `streamlit run app.py` showing the dashboard title
 
-Commit:
-
-## Done
+Commit: 4860c1b
