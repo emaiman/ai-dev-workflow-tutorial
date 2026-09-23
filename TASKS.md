@@ -67,3 +67,4 @@ Set up the Python environment, dependencies, and a minimal Streamlit app skeleto
 - [x] `app.py` exists and launches with `streamlit run app.py` showing the dashboard title
 
 Commit: 4860c1b
+Notes: clean
