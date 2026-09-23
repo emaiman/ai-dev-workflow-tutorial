@@ -1,0 +1,65 @@
+"""Data loading and sales calculations for the ShopSmart dashboard.
+
+Everything here is plain pandas (no Streamlit), so it can be tested with
+pytest without starting the app.
+"""
+import pandas as pd
+
+REQUIRED_COLUMNS = [
+    "date",
+    "order_id",
+    "product",
+    "category",
+    "region",
+    "quantity",
+    "unit_price",
+    "total_amount",
+]
+
+
+def load_sales_data(path):
+    """Read the sales CSV and parse the date column.
+
+    Raises ValueError naming any required columns that are missing.
+    """
+    df = pd.read_csv(path)
+    missing = [column for column in REQUIRED_COLUMNS if column not in df.columns]
+    if missing:
+        raise ValueError(f"Missing columns: {', '.join(missing)}")
+    df["date"] = pd.to_datetime(df["date"])
+    return df
+
+
+def total_sales(df):
+    """Sum of every order's total, in dollars."""
+    return float(df["total_amount"].sum())
+
+
+def total_orders(df):
+    """Number of distinct orders (unique order IDs, not rows)."""
+    return int(df["order_id"].nunique())
+
+
+def sales_by_month(df):
+    """Total sales per calendar month, in date order.
+
+    "MS" groups by month start, so each month is labeled with its first day.
+    """
+    monthly = df.resample("MS", on="date")["total_amount"].sum()
+    return monthly.reset_index().rename(columns={"date": "month", "total_amount": "sales"})
+
+
+def _sales_by(df, column):
+    """Total sales for each value in `column`, highest first."""
+    totals = df.groupby(column)["total_amount"].sum().sort_values(ascending=False)
+    return totals.reset_index().rename(columns={"total_amount": "sales"})
+
+
+def sales_by_category(df):
+    """Total sales per product category, highest first."""
+    return _sales_by(df, "category")
+
+
+def sales_by_region(df):
+    """Total sales per region, highest first."""
+    return _sales_by(df, "region")
