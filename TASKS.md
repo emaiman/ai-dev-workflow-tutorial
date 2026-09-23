@@ -44,13 +44,6 @@ Commit:
 
 ## In Progress
 
-### TASK-3: KPI cards
-Display Total Sales and Total Orders prominently at the top of the dashboard (FR-1).
-- [ ] Total Sales shown as currency (`$X,XXX,XXX`), approximately $116,500
-- [ ] Total Orders shown with thousands separators, equal to 482
-
-Commit:
-
 ## Done
 
 ### TASK-1: Environment setup and project initialization
@@ -68,4 +61,12 @@ Load `data/sales-data.csv` with Pandas and lay out the page structure for KPIs a
 - [x] Page layout has placeholder sections for KPIs, trend chart, and breakdown charts
 
 Commit: e7037cf
+Notes: clean
+
+### TASK-3: KPI cards
+Display Total Sales and Total Orders prominently at the top of the dashboard (FR-1).
+- [x] Total Sales shown as currency (`$X,XXX,XXX`), approximately $116,500
+- [x] Total Orders shown with thousands separators, equal to 482
+
+Commit: dab94dc
 Notes: clean
