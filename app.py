@@ -5,9 +5,10 @@ A one-page Streamlit app showing 2024 sales KPIs and charts
 """
 from pathlib import Path
 
+import plotly.express as px
 import streamlit as st
 
-from data import load_sales_data, total_orders, total_sales
+from data import load_sales_data, sales_by_month, total_orders, total_sales
 
 # Built from this file's folder so the app finds the CSV wherever it's launched.
 DATA_PATH = Path(__file__).parent / "data" / "sales-data.csv"
@@ -35,7 +36,16 @@ kpi_right.metric("Total Orders", f"{total_orders(sales):,}")
 
 # --- Sales trend ---
 st.subheader("Sales Trend Over Time")
-st.caption("Chart coming soon")
+trend_chart = px.line(
+    sales_by_month(sales),
+    x="month",
+    y="sales",
+    markers=True,
+    labels={"month": "Month", "sales": "Sales ($)"},
+)
+trend_chart.update_yaxes(tickformat="$,.0f")
+trend_chart.update_traces(hovertemplate="%{x|%B %Y}<br>%{y:$,.2f}<extra></extra>")
+st.plotly_chart(trend_chart, width="stretch")
 
 # --- Category and region breakdowns ---
 category_col, region_col = st.columns(2)
