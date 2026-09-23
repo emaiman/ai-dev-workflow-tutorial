@@ -51,14 +51,6 @@ Commit:
 
 ## In Progress
 
-### TASK-2: Data loading and basic structure
-Load `data/sales-data.csv` with Pandas and lay out the page structure for KPIs and charts.
-- [ ] CSV loads with `date` parsed as a date and numeric columns as numbers
-- [ ] Loaded data has 482 rows, 5 categories, and 4 regions
-- [ ] Page layout has placeholder sections for KPIs, trend chart, and breakdown charts
-
-Commit:
-
 ## Done
 
 ### TASK-1: Environment setup and project initialization
@@ -67,4 +59,13 @@ Set up the Python environment, dependencies, and a minimal Streamlit app skeleto
 - [x] `app.py` exists and launches with `streamlit run app.py` showing the dashboard title
 
 Commit: 4860c1b
+Notes: clean
+
+### TASK-2: Data loading and basic structure
+Load `data/sales-data.csv` with Pandas and lay out the page structure for KPIs and charts.
+- [x] CSV loads with `date` parsed as a date and numeric columns as numbers
+- [x] Loaded data has 482 rows, 5 categories, and 4 regions
+- [x] Page layout has placeholder sections for KPIs, trend chart, and breakdown charts
+
+Commit: e7037cf
 Notes: clean
