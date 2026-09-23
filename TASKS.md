@@ -12,14 +12,6 @@ A milestone moves to **Done** only when:
 
 ## To Do
 
-### TASK-2: Data loading and basic structure
-Load `data/sales-data.csv` with Pandas and lay out the page structure for KPIs and charts.
-- [ ] CSV loads with `date` parsed as a date and numeric columns as numbers
-- [ ] Loaded data has 482 rows, 5 categories, and 4 regions
-- [ ] Page layout has placeholder sections for KPIs, trend chart, and breakdown charts
-
-Commit:
-
 ### TASK-3: KPI cards
 Display Total Sales and Total Orders prominently at the top of the dashboard (FR-1).
 - [ ] Total Sales shown as currency (`$X,XXX,XXX`), approximately $116,500
@@ -58,6 +50,14 @@ Publish the dashboard to Streamlit Community Cloud with a shareable public URL (
 Commit:
 
 ## In Progress
+
+### TASK-2: Data loading and basic structure
+Load `data/sales-data.csv` with Pandas and lay out the page structure for KPIs and charts.
+- [ ] CSV loads with `date` parsed as a date and numeric columns as numbers
+- [ ] Loaded data has 482 rows, 5 categories, and 4 regions
+- [ ] Page layout has placeholder sections for KPIs, trend chart, and breakdown charts
+
+Commit:
 
 ## Done
 
