@@ -12,13 +12,6 @@ A milestone moves to **Done** only when:
 
 ## To Do
 
-### TASK-7: Deploy to Streamlit Community Cloud
-Publish the dashboard to Streamlit Community Cloud with a shareable public URL (NFR-5).
-- [ ] App is deployed and loads successfully at a public URL
-- [ ] Public URL is recorded in the README
-
-Commit:
-
 ## In Progress
 
 ## Done
@@ -73,3 +66,12 @@ Verify figures against the CSV and polish the dashboard for executive presentati
 
 Commit: 1e33538
 Notes: No code changes needed (all checks passed), so Commit is the TASK-6 start commit. Claude's first server health check hit a leftover server from an earlier session on port 8501; caught, and the review and log scan were redone on a fresh server (8502). Leftover server later stopped.
+
+### TASK-7: Deploy to Streamlit Community Cloud
+Publish the dashboard to Streamlit Community Cloud with a shareable public URL (NFR-5).
+- [x] App is deployed and loads successfully at a public URL
+- [x] Public URL is recorded in the README
+
+URL: https://sales-dashboard-emaiman.streamlit.app/
+Commit: 5a1c04e
+Notes: User deployed `main` on Streamlit Community Cloud. No code changes, so Commit is the deployed merge commit. The plan's "TASK-7: Start deployment" In Progress commit was skipped. A plain curl check of the URL looked like a login wall; with cookies it returned 200, so the app is public.
