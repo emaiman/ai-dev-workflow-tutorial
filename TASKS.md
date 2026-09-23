@@ -72,4 +72,4 @@ Verify figures against the CSV and polish the dashboard for executive presentati
 - [x] Code is commented and organized into clear functions (NFR-3)
 
 Commit: 1e33538
-Notes: clean
+Notes: No code changes needed (all checks passed), so Commit is the TASK-6 start commit. Claude's first server health check hit a leftover server from an earlier session on port 8501; caught, and the review and log scan were redone on a fresh server (8502). Leftover server later stopped.
