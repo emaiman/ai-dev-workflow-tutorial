@@ -12,13 +12,6 @@ A milestone moves to **Done** only when:
 
 ## To Do
 
-### TASK-3: KPI cards
-Display Total Sales and Total Orders prominently at the top of the dashboard (FR-1).
-- [ ] Total Sales shown as currency (`$X,XXX,XXX`), approximately $116,500
-- [ ] Total Orders shown with thousands separators, equal to 482
-
-Commit:
-
 ### TASK-4: Sales trend chart
 Add an interactive Plotly line chart of sales over time (FR-2).
 - [ ] Line chart shows sales by month (or day) across the 12-month range
@@ -50,6 +43,13 @@ Publish the dashboard to Streamlit Community Cloud with a shareable public URL (
 Commit:
 
 ## In Progress
+
+### TASK-3: KPI cards
+Display Total Sales and Total Orders prominently at the top of the dashboard (FR-1).
+- [ ] Total Sales shown as currency (`$X,XXX,XXX`), approximately $116,500
+- [ ] Total Orders shown with thousands separators, equal to 482
+
+Commit:
 
 ## Done
 

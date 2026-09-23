@@ -28,3 +28,13 @@ def load_sales_data(path):
         raise ValueError(f"Missing columns: {', '.join(missing)}")
     df["date"] = pd.to_datetime(df["date"])
     return df
+
+
+def total_sales(df):
+    """Sum of every order's total, in dollars."""
+    return float(df["total_amount"].sum())
+
+
+def total_orders(df):
+    """Number of distinct orders (unique order IDs, not rows)."""
+    return int(df["order_id"].nunique())
