@@ -7,7 +7,7 @@ from pathlib import Path
 
 import streamlit as st
 
-from data import load_sales_data
+from data import load_sales_data, total_orders, total_sales
 
 # Built from this file's folder so the app finds the CSV wherever it's launched.
 DATA_PATH = Path(__file__).parent / "data" / "sales-data.csv"
@@ -30,8 +30,8 @@ except (FileNotFoundError, ValueError) as error:
 
 # --- KPI cards ---
 kpi_left, kpi_right = st.columns(2)
-kpi_left.caption("Total Sales: coming soon")
-kpi_right.caption("Total Orders: coming soon")
+kpi_left.metric("Total Sales", f"${total_sales(sales):,.0f}")
+kpi_right.metric("Total Orders", f"{total_orders(sales):,}")
 
 # --- Sales trend ---
 st.subheader("Sales Trend Over Time")
