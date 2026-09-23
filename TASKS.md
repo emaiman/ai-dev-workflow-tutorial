@@ -29,14 +29,6 @@ Commit:
 
 ## In Progress
 
-### TASK-5: Category and region breakdowns
-Add side-by-side bar charts for sales by category and by region (FR-3, FR-4).
-- [ ] Category chart shows all 5 categories sorted highest to lowest, with Electronics on top
-- [ ] Region chart shows all 4 regions sorted highest to lowest
-- [ ] Both charts have clear labels and tooltips with exact values
-
-Commit:
-
 ## Done
 
 ### TASK-1: Environment setup and project initialization
@@ -70,4 +62,13 @@ Add an interactive Plotly line chart of sales over time (FR-2).
 - [x] Axes are labeled and tooltips show exact sales values
 
 Commit: 4f1f25b
+Notes: clean
+
+### TASK-5: Category and region breakdowns
+Add side-by-side bar charts for sales by category and by region (FR-3, FR-4).
+- [x] Category chart shows all 5 categories sorted highest to lowest, with Electronics on top
+- [x] Region chart shows all 4 regions sorted highest to lowest
+- [x] Both charts have clear labels and tooltips with exact values
+
+Commit: b569de2
 Notes: clean
